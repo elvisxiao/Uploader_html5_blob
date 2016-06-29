@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	  	<meta charset="utf-8">
+	  	<title>Test uploader</title>
+	  	<script type="text/javascript" src="./uploader.js"></script>
+		
+	  	<link rel="stylesheet" type="text/css" href="./uploader.css">
+	</head>
+	
+	<body>
+		<dl>
+			<dt>使用说明：</dt>
+			<dd>node server.js 启动上传服务器，监听端口在3004</dd>
+			<dd>浏览器打开test.html, 选择文件会立即上传</dd>
+			<dd>默认的chunk为100kb，实际应用中应该设置为1M组好</dd>
+		</dl>
+
+		<input type="file" id="iptFile" />
+		
+		<script type="text/javascript">
+			var uploader = new Uploader({
+				fileInput: 'iptFile',
+				uploadUrl: 'http://localhost:3004/upload',
+			});
+
+			uploader.onUploadDone = function() {
+				alert('上传完成');
+			};
+
+		</script>
+	</body>
+</html>
