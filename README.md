@@ -12,7 +12,7 @@ A better way to send big file to server.
 
 3、初始化：
    
-        var uploader = new Uploader({
+    var uploader = new Uploader({
 		fileInput: 'iptFile',
 		uploadUrl: 'http://localhost:3004/upload',
 		// chunkSize: 100000
