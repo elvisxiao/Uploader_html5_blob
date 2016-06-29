@@ -11,6 +11,7 @@ A better way to send big file to server.
 2、打开test.html, 选择文件即可上传（建议选择大文件已查看效果)
 
 3、初始化：
+   
    var uploader = new Uploader({
 		fileInput: 'iptFile',
 		uploadUrl: 'http://localhost:3004/upload',
