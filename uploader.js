@@ -66,7 +66,16 @@ var _ = function(options) {
 		if(this.httpRequest) {
 			return httpRequest;
 		}
-		return new XMLHttpRequest();
+		var xhr = new XMLHttpRequest();
+		if("withCredentials" in xhr) {
+			return xhr;
+		}
+		
+		if(typeof XDomainRequest != "undefined") {
+			return new XDomainRequest();
+		}
+		
+		return null;
 	};
 
 	this.getFileInput().parentNode.addEventListener('change', (e) => {
